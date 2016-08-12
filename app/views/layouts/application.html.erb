@@ -10,9 +10,25 @@
 
   <body>
 
-<%= link_to "Главная", root_path %>
-<%= link_to "О нас", pages_about_path %>
+	<div class="container-fluid container-background">
+		<div class="container">
+
+
+			<ul class="nav nav-inline">
+			  <li class="nav-item">
+			    <%= link_to "Главная", root_path %>
+			  </li>
+			  <li class="nav-item">
+			    <%= link_to "О нас", pages_about_path %>
+			  </li>
+
+			</ul>
+
 
     <%= yield %>
+		
+		</div>
+	</div>
+
   </body>
 </html>
