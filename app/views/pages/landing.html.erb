@@ -1,9 +1,19 @@
+<% if user_signed_in? %>
+
+<% else %>
+
 <div class="jumbotron jumbotron-landing">
   <h1 class="display-3">Делитесь своими эмоциями</h1>
   <p class="lead">Размещайте свои фотографии и подписывайтесь на публикации ваших друзей.</p>
   <hr class="m-y-2">
   <p class="lead">
-    <a class="btn btn-warning" href="#" role="button">Создать аккаунт</a>
-    <a class="btn btn-primary" href="#" role="button">Войти</a>
+    <%= link_to "Создать аккаунт", new_user_registration_path, class: "btn btn-warning" %>
+    <%= link_to "Войти", new_user_session_path, class: "btn btn-primary" %>
+
   </p>
 </div>
+
+
+<% end %>
+
+
