@@ -4,6 +4,8 @@ $jumbotron-bg: rgba(255,255,255, 0.4);
 $btn-primary-bg: #6BB9F0;
 $btn-warning-bg: #E08283;
 $navbar-border-radius: 0;
+$card-cap-bg:   rgba(255,255,255, 0.5);          
+$card-bg: rgba(255,255,255, 0.4);
 @import "bootstrap";
 
 .container-background {
@@ -25,7 +27,12 @@ $navbar-border-radius: 0;
 	background-color:rgba(255,255,255,0);
 }
 
+.devise-form {
 
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+}
 
 
 .nav-landing:link,
