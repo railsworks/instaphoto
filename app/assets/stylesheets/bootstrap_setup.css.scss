@@ -6,6 +6,7 @@ $btn-warning-bg: #E08283;
 $navbar-border-radius: 0;
 $card-cap-bg:   rgba(255,255,255, 0.5);          
 $card-bg: rgba(255,255,255, 0.4);
+$body-bg: #ECF0F1; 
 @import "bootstrap";
 
 .container-background {
@@ -21,6 +22,7 @@ $card-bg: rgba(255,255,255, 0.4);
 
 	padding-right:0;
 	padding-left:0;
+	text-align:center;
 }
 
 .bg-transparent {
@@ -34,9 +36,10 @@ $card-bg: rgba(255,255,255, 0.4);
 }
 
 .photo-form {
-	width:50%;
+	display:inline-block;
 	margin-left:auto;
 	margin-right:auto;
+	text-align:left;
 }
 
 .nav-landing:link,
@@ -58,9 +61,4 @@ font-family: 'Crafty Girls', cursive;
 .landing-logo {
 
 	font-size:2rem;
-}
-
-.bg-grey {
-	background-color: #ECF0F1;
-	height: 100vh;
 }
