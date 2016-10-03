@@ -75,6 +75,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  config.action_mailer.default_url_options = { host: 'instaphoto-rails.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
@@ -84,8 +85,6 @@ Rails.application.configure do
     password:             ENV.fetch('MAIL_PASSWORD'),
     authentication:       'plain',
     enable_starttls_auto: true  }
-
-  config.action_mailer.default_url_options = { host: 'instaphoto-rails.herokuapp.com', port: 3000 }
 
 
   config.paperclip_defaults = {
