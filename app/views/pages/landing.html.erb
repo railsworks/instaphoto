@@ -3,12 +3,12 @@
 <% else %>
 
 <div class="jumbotron">
-  <h1 class="display-3">Делитесь своими эмоциями</h1>
-  <p class="lead">Размещайте свои фотографии и подписывайтесь на публикации ваших друзей.</p>
+  <h1 class="display-3"><%= t('landing.header') %></h1>
+  <p class="lead"><%= t('landing.description') %></p>
   <hr class="m-y-2">
   <p class="lead">
-    <%= link_to "Создать аккаунт", new_user_registration_path, class: "btn btn-warning" %>
-    <%= link_to "Войти", new_user_session_path, class: "btn btn-primary" %>
+    <%= link_to t('landing.buttons.create_account'), new_user_registration_path, class: "btn btn-warning" %>
+    <%= link_to t('landing.buttons.login'), new_user_session_path, class: "btn btn-primary" %>
 
 
   </p>

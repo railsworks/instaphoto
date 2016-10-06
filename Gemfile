@@ -28,7 +28,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'ionicons-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise', '~> 4.2.0'

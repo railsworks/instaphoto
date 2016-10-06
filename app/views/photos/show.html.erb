@@ -1,14 +1,20 @@
 <div class="card photo-form">
+	<div class="card-block">
 
-  <div class="card-block">
+			<%= image_tag @photo.image.url(:large) %><br>
+			<strong> <%= @photo.description %></strong><br>
 
-<p>
-	<%= image_tag @photo.image.url(:large) %><br>
-	<strong> <%= @photo.description %></strong><br>
-	<%= @photo.user.name if @photo.user %>
-</p>
+			<%= link_to profile_path(@photo.user_id) do %>
+		          <i class="ion-person"></i> <%= @photo.user.name %>
+		    <% end %>
 
-<% if @photo.user == current_user %><%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %> | <% end %>
-	<%= link_to 'Back', photos_path %>
-</div></div>
+                <span class="pull-xs-right"><%= link_to edit_photo_path(@photo) do %>
+                    <i class="ion-edit"></i> Изменить
+                <% end %> |
+
+                <%= link_to @photo, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="ion-trash-b"></i> Удалить
+                <% end %></span>
+
+	</div>
+</div>

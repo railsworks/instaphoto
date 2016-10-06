@@ -1,28 +1,40 @@
-<%= @user.email %>
+<h2><%= @user.name %></h2>
 
 <% if current_user.id == @user.id %>
 <% else %>
 
-  <% if current_user.subscriptions.exists?(friend_id: @user.id) %>
-  <%= link_to "Отписаться", unsubscribe_profile_path(@user) %>
-  <% else %>
-  <%= link_to "Подписаться", subscribe_profile_path(@user) %>
-  <% end %>
+    <% if current_user.subscriptions.exists?(friend_id: @user.id) %>
+          <%= link_to "Отписаться", unsubscribe_profile_path(@user), class:'btn btn-primary' %>
+    <% else %>
+          <%= link_to "Подписаться", subscribe_profile_path(@user), class:'btn btn-primary' %>
+    <% end %>
 
 <% end %>
 
-<br>
+<br><br>
 
-<% @user.photos.each do |photo| %>
+<% @photos.each do |photo| %>
     <div class="card photo-form">
         <div class="card-block">
-          <%= image_tag photo.image.url(:medium) %><br>
+          
+            <div class="img-container"><%= link_to photo, class: 'photo-link' do %>
+                  <%= image_tag photo.image.url(:medium), class:"img" %>
+            <% end %></div><br>
+
           <strong><%= photo.description %></strong><br>
-          <%= link_to 'Show', photo %>
-        <% if photo.user == current_user %>
-          | <%= link_to 'Edit', edit_photo_path(photo) %> |
-          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %> 
-        <% end %> 
+          
+          <% if photo.user == current_user %>
+              <%= link_to edit_photo_path(photo) do %>
+                    <i class="ion-edit"></i> Изменить
+              <% end %> |
+          
+              <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="ion-trash-b"></i> Удалить
+              <% end %>
+          <% end %> 
+
         </div>
     </div>
-    <% end %>
+<% end %>
+
+<%= will_paginate @photos %>
