@@ -1,6 +1,6 @@
 <div class="card devise-form">
   <div class="card-header">
-    <h2>Регистрация</h2>
+    <h2><%= t('devise.titles.signup') %></h2>
 
   </div>
   <div class="card-block">
@@ -23,7 +23,7 @@
   <div class="form-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> <%= t('devise.other.characters_minimum') %></em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
   </div>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Зарегистрировать", class:"btn btn-primary" %>
+    <%= f.submit t('devise.buttons.create_account'), class:"btn btn-primary" %>
   </div>
 <% end %>
 

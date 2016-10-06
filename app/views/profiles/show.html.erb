@@ -4,9 +4,9 @@
 <% else %>
 
     <% if current_user.subscriptions.exists?(friend_id: @user.id) %>
-          <%= link_to "Отписаться", unsubscribe_profile_path(@user), class:'btn btn-primary' %>
+          <%= link_to t('photos.unsubscribe'), unsubscribe_profile_path(@user), class:'btn btn-primary' %>
     <% else %>
-          <%= link_to "Подписаться", subscribe_profile_path(@user), class:'btn btn-primary' %>
+          <%= link_to t('photos.subscribe'), subscribe_profile_path(@user), class:'btn btn-primary' %>
     <% end %>
 
 <% end %>
@@ -25,11 +25,11 @@
           
           <% if photo.user == current_user %>
               <%= link_to edit_photo_path(photo) do %>
-                    <i class="ion-edit"></i> Изменить
+                    <i class="ion-edit"></i> <%= t('photos.edit') %>
               <% end %> |
           
-              <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                        <i class="ion-trash-b"></i> Удалить
+              <%= link_to photo, method: :delete, data: { confirm: t('photos.are_you_sure') } do %>
+                        <i class="ion-trash-b"></i> <%= t('photos.delete') %>
               <% end %>
           <% end %> 
 

@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 before_action :set_user, except: [:my_photos, :subscribes_list, :friends_photos]
-before_action :authenticate_user!, except: [:show]
+before_action :authenticate_user!
 
 
   def show
@@ -9,17 +9,17 @@ before_action :authenticate_user!, except: [:show]
 
   def subscribe
       if current_user.id == @user.id
-        redirect_to profile_path(@user), notice: "Вы не можете подписаться на самого себя"
+        redirect_to profile_path(@user), notice: t('photos.cannot_subscribe_to_yourself')
       else
             	if current_user.subscriptions.exists?(friend_id: @user.id)
-            		redirect_to profile_path(@user), notice: "Вы уже подписаны на данного пользователя"
+            		redirect_to profile_path(@user), notice: t('photos.already_subscribed')
 
             	else
           	  	@subscription = current_user.subscriptions.build
           	  	@subscription.friend_id = @user.id
           	  	@subscription.save
           	  	if @subscription.save
-          	  		redirect_to profile_path(@user), notice: "Вы подписаны на данного пользователя"
+          	  		redirect_to profile_path(@user), notice: t('photos.subscribe_notice')
           	  	end
 
             	end
@@ -28,15 +28,15 @@ before_action :authenticate_user!, except: [:show]
 
   def unsubscribe
         if current_user.id == @user.id
-            redirect_to profile_path(@user), notice: "Вы не можете подписаться на самого себя"
+            redirect_to profile_path(@user), notice: t('photos.cannot_subscribe_to_yourself')
         else
             	if current_user.subscriptions.exists?(friend_id: @user.id)
           	  	@subscription = current_user.subscriptions.find_by_friend_id(@user.id)
           	  	@subscription.destroy
-          	  	redirect_to profile_path(@user), notice: "Вы больше не подписаны на данного пользователя"
+          	  	redirect_to profile_path(@user), notice: t('photos.unsubscribe_notice')
 
             	else
-            	  	redirect_to profile_path(@user), notice: "Вы не были подписаны на данного пользователя"
+            	  	redirect_to profile_path(@user), notice: t('photos.were_not_subscribed')
 
           	end
       end

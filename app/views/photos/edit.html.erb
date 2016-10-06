@@ -1,6 +1,6 @@
 <div class="card photo-form">
   <div class="card-header color-header">
-    <h2>Редактировать фото</h2>
+    <h2><%= t('photos.edit_title') %></h2>
 
   </div>
   <div class="card-block">
@@ -8,6 +8,6 @@
 
 <%= render 'form', photo: @photo %>
 
-<%= link_to 'Show', @photo %> |
-<%= link_to 'Back', photos_path %>
+<%= link_to t('photos.show'), @photo %> |
+<%= link_to t('photos.my_photos'), profiles_my_photos_path %>
 </div></div>

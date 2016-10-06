@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   landing:
     header: "Share your emotions"
@@ -26,6 +5,7 @@ en:
     buttons:    
       create_account: "Create account"
       login: "Sign in"
+
   navigation:
     login: "Sign in"
     logout: "Sign out"
@@ -35,9 +15,69 @@ en:
     my_subscriptions: "My Subscriptions"
     friends_photos: "Feed"
     account: "Account"
+
   photos:
     edit: "Edit"
     delete: "Delete"
     upload: "Upload"
     subscribe: "Subscribe"
     unsubscribe: "Unsubscribe"
+    edit_title: "Edit Photo"
+    new_title: "Upload"
+    show: "Show"
+    my_photos: "My photos"
+    are_you_sure: "Are you sure?"
+    subscribe_notice: "You have been subscribed to the updates of this user"
+    unsubscribe_notice: "You have been unsubscribed from the updates of this user"
+    already_subscribed: "You have been already subscribed to this user"
+    were_not_subscribed: "You have not been subscribed to this user"
+    cannot_subscribe_to_yourself: "You cannot subscribe to your own updates"
+
+  devise:
+    titles:
+      signup: "Sign Up"
+      edit_account: "Edit user data"
+      delete_account: "Delete_account"      
+      login: "Sign In"
+      forgot_password: "Forgot your password?"      
+    buttons:
+      create_account: "Create account"
+      sign_in: "Sign in"
+      update: "Update"
+      delete_account: "Delete account"
+      forgot_password: "Forgot your password?"
+      reset_password: "Send email for password reset"
+    other:
+      current_pass_for_confirmation: "(current password in needed for confirmation)"
+      characters_minimum: "characters minimum"
+      leave_blank: "(leave blank, if you don't want to change it)"
+
+  about:
+    title: "About"
+    description: "Instaphoto is a social network for photo sharing"   
+
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
+
+  activerecord:
+    models:
+      user: "User"
+      photo: "Photo"
+    attributes:
+      user:
+        email: "Email"
+        name: "Name"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current_Password"
+        remember_me: "Remember me"
+      photo:
+        description: "Description"
+        image: "File"
+
+  helpers:
+    submit:
+      create: "Upload %{model}"
+      update: "Update %{model}"

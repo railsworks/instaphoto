@@ -8,11 +8,11 @@
           <strong><%= photo.description %></strong><br>
 
           <%= link_to edit_photo_path(photo) do %>
-                <i class="ion-edit"></i> Изменить
+                <i class="ion-edit"></i> <%= t('photos.edit') %>
           <% end %> |
 
-          <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="ion-trash-b"></i> Удалить
+          <%= link_to photo, method: :delete, data: { confirm: t('photos.are_you_sure') } do %>
+                <i class="ion-trash-b"></i> <%= t('photos.delete') %>
           <% end %>
           
         </div>

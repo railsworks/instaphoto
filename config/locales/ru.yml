@@ -5,6 +5,7 @@ ru:
     buttons:    
       create_account: "Создать аккаунт"
       login: "Войти"
+
   navigation:
     login: "Войти"
     logout: "Выйти"
@@ -14,9 +15,69 @@ ru:
     my_subscriptions: "Мои Подписки"
     friends_photos: "Лента"
     account: "Аккаунт"
+
   photos:
     edit: "Изменить"
     delete: "Удалить"
     upload: "Загрузить"
     subscribe: "Подписаться"
     unsubscribe: "Отписаться"
+    edit_title: "Изменить Фото"
+    new_title: "Загрузить Фото"
+    show: "Показать"
+    my_photos: "Мои фото"
+    are_you_sure: "Вы уверены?"
+    subscribe_notice: "Вы подписаны на обновления данного пользователя"
+    unsubscribe_notice: "Вы больше не подписаны на обновления данного пользователя"
+    already_subscribed: "Вы уже подписаны на данного пользователя"
+    were_not_subscribed: "Вы не были подписаны на данного пользователя"
+    cannot_subscribe_to_yourself: "Вы не можете подписаться на самого себя"
+  
+  devise:
+    titles:
+      signup: "Регистрация"
+      edit_account: "Изменить данные аккаунта"
+      delete_account: "Удаление аккаунта"
+      login: "Вход"
+      forgot_password: "Забыли пароль?"
+    buttons:
+      create_account: "Создать аккаунт"
+      sign_in: "Войти"
+      update: "Обновить"
+      delete_account: "Удалить аккаунт"
+      forgot_password: "Забыли пароль?"
+      reset_password: "Прислать ссылку для сброса пароля"      
+    other:
+      current_pass_for_confirmation: "(текущий пароль нужен для подтверждения)"
+      characters_minimum: "символов минимум"
+      leave_blank: "(оставьте пустым, если не хотите менять пароль)"
+
+  about:
+    title: "О проекте"
+    description: "Instaphoto - это социальная сеть для обмена фотографиями."
+
+  will_paginate:
+    previous_label: "&#8592; Предыдущая"
+    next_label: "Следующая &#8594;"
+    page_gap: "&hellip;"
+
+  activerecord:
+    models:
+      user: "Пользователь"
+      photo: "Фото"
+    attributes:
+      user:
+        email: "Email"
+        name: "Имя"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        remember_me: "Запомнить меня"
+      photo:
+        description: "Описание"
+        image: "Файл"
+
+  helpers:
+    submit:
+      create: "Загрузить %{model}"
+      update: "Обновить %{model}"

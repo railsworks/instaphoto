@@ -1,6 +1,6 @@
 <div class="card devise-form">
   <div class="card-header">
-    <h2>Войти</h2>
+    <h2><%= t('devise.titles.login') %></h2>
 
   </div>
   <div class="card-block">
@@ -24,7 +24,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Войти", class:"btn btn-primary" %>
+    <%= f.submit t('devise.buttons.sign_in'), class:"btn btn-primary" %>
   </div>
 <% end %>
 <%= render "devise/shared/links" %>
